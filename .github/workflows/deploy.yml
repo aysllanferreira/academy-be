@@ -30,3 +30,5 @@ jobs:
           AWS_COGNITO_CLIENT_ID_DEV: ${{ secrets.AWS_COGNITO_CLIENT_ID_DEV }}
           AWS_DYNAMODB_TABLE_NAME_DEV: ${{ secrets.AWS_DYNAMODB_TABLE_NAME_DEV }}
           AWS_MY_REGION: ${{ secrets.AWS_MY_REGION }}
+          CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
