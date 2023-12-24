@@ -1,0 +1,2 @@
+Resources:
+  DrakkonTable: ${file(./aws/resources/DynamoDB/drakkon-table.yml)}

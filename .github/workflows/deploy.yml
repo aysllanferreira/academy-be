@@ -1,0 +1,32 @@
+name: Deploy-to-Serverless
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  deploy:
+    name: Deploy to Serverless
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the files
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - run: npm install && npm run build
+
+      - name: serverless deploy
+        uses: serverless/github-action@v3.2
+        with:
+          args: deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
+          AWS_COGNITO_USER_POOL_ID_DEV: ${{ secrets.AWS_COGNITO_USER_POOL_ID_DEV }}
+          AWS_COGNITO_CLIENT_ID_DEV: ${{ secrets.AWS_COGNITO_CLIENT_ID_DEV }}
+          AWS_DYNAMODB_TABLE_NAME_DEV: ${{ secrets.AWS_DYNAMODB_TABLE_NAME_DEV }}
+          AWS_MY_REGION: ${{ secrets.AWS_MY_REGION }}

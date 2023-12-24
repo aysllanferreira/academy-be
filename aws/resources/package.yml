@@ -1,0 +1,6 @@
+individually: true
+exclude:
+  - ./**
+include:
+  - dist/**
+  - node_modules/**
