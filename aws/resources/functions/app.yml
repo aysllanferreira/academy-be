@@ -1,0 +1,30 @@
+handler: dist/lambda.handler
+events:
+  - http:
+      path: /
+      method: any
+      cors:
+        origins:
+          - 'http://localhost:3000'
+        headers:
+          - Content-Type
+          - X-Amz-Date
+          - Authorization
+          - X-Api-Key
+          - X-Amz-Security-Token
+          - X-Amz-User-Agent
+        allowCredentials: true
+  - http:
+      path: /{proxy+}
+      method: any
+      cors:
+        origins:
+          - 'http://localhost:3000'
+        headers:
+          - Content-Type
+          - X-Amz-Date
+          - Authorization
+          - X-Api-Key
+          - X-Amz-Security-Token
+          - X-Amz-User-Agent
+        allowCredentials: true

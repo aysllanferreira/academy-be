@@ -1,0 +1,9 @@
+service: drakkon-academy-api
+useDotenv: true
+frameworkVersion: '3'
+provider: ${file(./aws/resources/provider.yml)}
+functions: ${file(./aws/resources/functions/functions.yml)}
+package: ${file(./aws/resources/package.yml)}
+plugins: ${file(./aws/resources/plugins.yml)}
+custom: ${file(./aws/resources/custom.yml)}
+resources: ${file(./aws/resources/resources.yml)}

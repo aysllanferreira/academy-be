@@ -1,0 +1,8 @@
+name: aws
+runtime: nodejs18.x
+region: us-east-1
+stage: 'dev'
+timeout: 30
+memorySize: 512
+environment: ${file(./aws/resources/environment.yml)}
+iamRoleStatements: ${file(./aws/resources/iamRoleStatements.yml)}
