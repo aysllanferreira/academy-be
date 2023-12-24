@@ -24,8 +24,8 @@ jobs:
         with:
           args: deploy
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_COGNITO_USER_POOL_ID_DEV: ${{ secrets.AWS_COGNITO_USER_POOL_ID_DEV }}
           AWS_COGNITO_CLIENT_ID_DEV: ${{ secrets.AWS_COGNITO_CLIENT_ID_DEV }}
           AWS_DYNAMODB_TABLE_NAME_DEV: ${{ secrets.AWS_DYNAMODB_TABLE_NAME_DEV }}
